@@ -6,7 +6,7 @@
  
 
 ## Features
- * Rest API : https://api.maelyn.my.id
+ * Rest API : https://api.maelyn.tech
 
 ## Installation 
 
