@@ -1,5 +1,5 @@
 # Whatsapp Bot (Auto Chat AI)
- *  AI from Character.ai
+ *  AI from Character.ai (https://character.ai)
  *  Pairing Code
  *  Support Private Chat & Group
  *  Mention untuk prefix chat grup
