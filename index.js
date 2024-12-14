@@ -154,26 +154,15 @@ async function Maelyn() {
     if (pairingCode && !socket.authState.creds.registered) {
       let phoneNumber;
       phoneNumber = await question(
-        chalk.bgBlack(chalk.greenBright(`Please type your WhatsApp number : `)),
+        chalk.bgBlack(chalk.greenBright(`Example: 62857xxxxxxxx Please type your WhatsApp number : `)),
       );
       phoneNumber = phoneNumber.replace(/[^0-9]/g, "");
 
-      if (!Object.keys(PHONENUMBER_MCC).some((v) => phoneNumber.startsWith(v))) {
-        console.log(
-          chalk.bgBlack(
-            chalk.redBright("Start with your country's WhatsApp code!"),
-          ),
-        );
-        phoneNumber = await question(
-          chalk.bgBlack(chalk.greenBright(`Please type your WhatsApp number : `)),
-        );
-        phoneNumber = phoneNumber.replace(/[^0-9]/g, "");
-        rl.close();
-      }
+      
 
       setTimeout(async () => {
         try {
-          let code = await socket.requestPairingCode(phoneNumber);
+          let code = await socket.requestPairingCode(phoneNumber.trim());
           code = code?.match(/.{1,4}/g)?.join("-") || code;
           console.log(
             chalk.black(chalk.bgGreen(`Your Pairing Code : `)),
